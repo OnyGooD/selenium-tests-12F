@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-
+from tests.rooms import first_room
 
 def get_driver(headless=False):
     options = Options()
@@ -19,6 +19,8 @@ def get_driver(headless=False):
 def start_bot():
     driver = get_driver()
     driver.get("https://csati.nemestamas.hu/")
+
+    first_room(driver)
 
     # driver.quit()
 
